@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script>
+		/*
+			正则表达式：
+			
+			是专门用来检索字符串一种工具，或者规则
+		*/
+		/*
+		        找出下面字符串中带有数字的字符，并且放到一个数组中
+		
+		        找出下面字符串中带有数字的字符(包括连续的)，并且放到一个数组中
+    	*/
+    	let str = 'dhsuaey71 9den1i9dj10die2jc8r9'; //[7,1,9,1,9,1,0,2,8]
+
+    	let arr = [];
+    	
+    	arr = str.match(/\d+/g)
+    	console.log(arr)
+    	
+    	/*
+    	 	正则表达式为一个对象
+    	 		/字符串/  里面只能为字符串
+    	 		new RegExp(正则||字符串)  ->   标准写法
+    	 		
+    	 	\转义符
+    	 	
+    	 	\+一些字母，有可能会为一个特殊的符号
+    	 */
+    	console.log(/a/)    				//正则a
+    	console.log(new RegExp('/a/'))		//用字符串包起来,会默认斜杠也是字符串，说以斜杠前面会自动出现转义符 -> /\/a\//
+    	console.log(new RegExp(/a/))		//正则a
+    	
+    	//test 方法
+    	
+    	//.test(string)返回的是布尔值
+    	//如果string中有正则匹配项则返回true，否则返回false
+    	
+    	console.log(/7/.test(str))  //true
+    	console.log(/6/.test(str))  //false
+    	
+    	
+    	/*
+	       string.search(//||字符串);
+	            找到指定字符的位置
+	            没有找到 -1
+	
+	       indexOf类似
+	
+	       	修饰符:
+	            i -> 忽略大小写
+	    */
+    	console.log(str.search('7')) //找到返回的是位置
+    	console.log(str.search('6')) //没找到返回-1
+    	
+    	
+    	  /*
+		        string.match(//);
+		
+		            找到匹配项，返回的是一个数组
+		            没有找到返回null
+		
+		        元字符:
+		            \d  一个数字
+		
+		        量词:
+		            +  最小一个，最多无限
+		        
+		        如果返回的值只有一个，那么会有多个属性
+		            1.值
+		            2.索引
+		            3.整个字符串
+		            4.undefined
+		
+		            length还为1
+		
+		        正则的特性:
+		            懒惰:
+		                让它找一次，它绝对不可能找多次
+		            贪婪:
+		                它会尽可能的找到你规则中数据
+		
+		        g -> 修饰符 找全局
+		
+		    */
+		   
+		   console.log(str.match(/\d+/g))  //找全部为数字的数组
+	</script>
+</html>

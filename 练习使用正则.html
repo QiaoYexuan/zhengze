@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		//去class名
+		let str = '<p class="pp">从前有<div>一颗陨石</div>坠落在了地球上，<span class="shitou">这颗<strong>陨石</strong>内部蕴藏这巨大能量！</span></p>';
+		
+		let s = str.replace(/<[^>]+>/g,'')
+		console.log(s)
+		
+		//去空格
+		 let str1 = '       mi  aov         ';
+		 let s1 = str1.replace(/^\s+|\s+$/g,'')
+		 console.log(s1)
+		 
+		/*
+		    {a,b}
+		        a最小
+		        b最大
+		
+		        {0,5}  最小没有最多5个
+		
+		        +  {1,} 最小一个最多不限
+		
+		        ?  {0,1} 最小可以没有，最多只能有一个
+		
+		        *  {0,} 最小没有最多不限
+		  */
+		 let str2 = 'a232132131ca5432ca89caca8c';
+		 
+		 console.log(str2.match(/a\d{0,5}c/g))
+		 console.log(str2.match(/a\d*c/g))
+		 console.log(str2.match(/a\d{0,2}c/g))
+		 
+		 
+		 
+	</script>
+</html>
